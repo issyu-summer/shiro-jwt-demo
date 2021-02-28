@@ -9,33 +9,37 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>otherService</artifactId>
-
+    <artifactId>gateway</artifactId>
 <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>2.2.3.RELEASE</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
     <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <optional>true</optional>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-gateway</artifactId>
+        <version>3.0.1</version>
+        <exclusions>
+            <exclusion>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <groupId>org.springframework.boot</groupId>
+            </exclusion>
+        </exclusions>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+        <version>2.4.3</version>
     </dependency>
     <dependency>
         <groupId>com.alibaba.cloud</groupId>
         <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         <version>2.2.5.RELEASE</version>
     </dependency>
-    <dependency>
-        <groupId>cn.edu.xmu</groupId>
-        <artifactId>core</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <scope>compile</scope>
-    </dependency>
 </dependencies>
+
 </project>
