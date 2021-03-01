@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      server-addr: 101.37.20.199:8848
+    gateway:
+      routes:
+        # 路由id
+        - id: other-service
+          # 路由到的地址
+          uri: http://127.0.0.1:8082
+          # 设置谓词，路径匹配的进行路由
+          predicates:
+            - Path=/test
+server:
+  port: 8080

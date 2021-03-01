@@ -45,11 +45,12 @@ public class OtherController {
     @GetMapping("/test")
     public Object other(){
 
-        ServiceInstance serviceInstance = loadBalancerClient.choose("provider");
-        String path
-                = String.format("http://%s:%s/user/test",serviceInstance.getHost(),serviceInstance.getPort());
-        Object result=restTemplate.getForObject(path,Response.class);
-        return result;
+        return "test-success";
+//        ServiceInstance serviceInstance = loadBalancerClient.choose("provider");
+//        String path
+//                = String.format("http://%s:%s/user/test",serviceInstance.getHost(),serviceInstance.getPort());
+//        Object result=restTemplate.getForObject(path,Response.class);
+//        return result;
     }
 
     @Accessors(chain = true)
